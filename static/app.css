@@ -1,0 +1,154 @@
+:root {
+  --bg: #f6f2ec;
+  --ink: #1f242b;
+  --accent: #ff6b5f;
+  --accent-dark: #d84d44;
+  --muted: #5a646f;
+  --panel: #ffffff;
+  --border: #e3dcd4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #fff7ef, var(--bg));
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.card {
+  width: min(760px, 100%);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(43, 32, 18, 0.12);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: var(--accent-dark);
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: 1.9rem;
+  margin: 0 0 8px;
+}
+
+.subtle {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input[type="file"] {
+  padding: 10px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: #fffaf4;
+}
+
+.filename {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+button {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.progress-panel {
+  margin-top: 24px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #f1e9de;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ffb087, var(--accent));
+  transition: width 0.2s ease;
+}
+
+.result-panel {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #fff6ed;
+  border: 1px solid #f0ded0;
+}
+
+.label {
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.actions {
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}

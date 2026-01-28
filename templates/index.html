@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LOA Return Update</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <header>
+          <p class="eyebrow">LOA Return Update</p>
+          <h1>Compare Sales &amp; People Files</h1>
+          <p class="subtle">
+            Upload both Excel files to generate the LOA return update sheet.
+          </p>
+        </header>
+
+        <form id="upload-form">
+          <div class="field">
+            <label for="sales_file">Sales Compensation Report</label>
+            <input id="sales_file" name="sales_file" type="file" accept=".xlsx,.xls" />
+            <span class="filename" id="sales_filename">No file selected</span>
+          </div>
+
+          <div class="field">
+            <label for="people_file">People File</label>
+            <input id="people_file" name="people_file" type="file" accept=".xlsx,.xls" />
+            <span class="filename" id="people_filename">No file selected</span>
+          </div>
+
+          <button type="submit" id="run-button">Run</button>
+        </form>
+
+        <section class="progress-panel">
+          <div class="progress-header">
+            <span>Status</span>
+            <span id="status-text">Ready.</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </section>
+
+        <section class="result-panel">
+          <div>
+            <span class="label">Rows</span>
+            <span id="row-count">-</span>
+          </div>
+          <div>
+            <span class="label">Output</span>
+            <span id="output-path">-</span>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button type="button" id="download-button" disabled>Open output file</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
